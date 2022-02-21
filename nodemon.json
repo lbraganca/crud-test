@@ -1,0 +1,6 @@
+{
+  "restartable": "r",
+  "ignore": [".git", "node_modules", "build"],
+  "watch": ["./src"],
+  "ext": "js,json,css,html"
+}

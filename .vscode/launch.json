@@ -2,11 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "type": "pwa-node",
             "request": "launch",
             "name": "Launch Program",
-            // "program": "${workspaceRoot}/bin/www",
-            "program": "${workspaceRoot}/model/init.js",
+            "skipFiles": [
+              "<node_internals>/**"
+            ],
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run"],
+            "program": "dev",
             "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
             "env": {
