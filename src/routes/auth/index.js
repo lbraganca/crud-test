@@ -29,7 +29,7 @@ router.post('/login', async (request, response) => {
     jwtConfig.secret,
     jwtConfig.options,
     (error, token) =>
-      error ? response.error()(error) : response.success()(token),
+      error ? response.error()(error) : response.success()({ token }),
   );
 });
 
