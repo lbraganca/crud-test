@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  api:
+    build: ./
+    container_name: crud-test-dev
+    ports:
+      - '8080:8080'
+      - '9229:9229'
+    volumes:
+      - ./:/app
+      - /app/node_modules
