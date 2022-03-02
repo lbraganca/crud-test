@@ -7,7 +7,15 @@
     "build": "npx babel ./src --out-dir build",
     "dev": "nodemon --exec babel-node ./src/index.js",
     "start": "node ./build/index.js",
-    "db:sync": "babel-node ./src/db/init.js"
+    "db:sync": "babel-node ./src/db/init.js",
+    "docker:build": "docker build -t crud-test .",
+    "docker:run": "docker run --name crud-test-dev -p 8080:8080 --rm -v /Users/runtime/Documents/Workspace/crud-test:/app -v /app/node_modules crud-test ",
+    "docker:start": "docker start crud-test-dev",
+    "docker:stop": "docker stop crud-test-dev",
+    "docker:containerRm": "docker container rm crud-test-dev",
+    "docker:imageRm": "docker image rm crud-test -f",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down --rmi all -v"
   },
   "dependencies": {
     "compression": "^1.7.4",
